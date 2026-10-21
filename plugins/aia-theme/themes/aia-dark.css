@@ -1,0 +1,120 @@
+/* AIA Dark — deep charcoal-navy background, cyan-blue + violet glow accents.
+   Matches the wallpaper/desktop palette established for Aref's devices. */
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* Core backgrounds — deep charcoal-to-navy gradient feel */
+  --ls-primary-background-color: #0d1117;
+  --ls-secondary-background-color: #161b26;
+  --ls-tertiary-background-color: #1e2536;
+  --ls-quaternary-background-color: #2a3346;
+  --ls-table-tr-even-background-color: var(--ls-secondary-background-color);
+  --ls-slide-background-color: var(--ls-primary-background-color);
+
+  /* Text */
+  --ls-primary-text-color: #cbd5e1;
+  --ls-secondary-text-color: #e2e8f0;
+  --ls-title-text-color: #f8fafc;
+  --ls-left-sidebar-text-color: #94a3b8;
+
+  /* Links and refs — cyan-blue primary accent */
+  --ls-link-text-color: #38bdf8;
+  --ls-link-text-hover-color: #7dd3fc;
+  --ls-link-ref-text-color: var(--ls-link-text-color);
+  --ls-link-ref-text-hover-color: var(--ls-link-text-hover-color);
+  --ls-block-ref-link-text-color: #0ea5e9;
+
+  /* Tags — soft violet secondary accent, so accents alternate cyan/violet like the wallpaper */
+  --ls-tag-text-color: #c084fc;
+  --ls-tag-text-hover-color: #d8b4fe;
+
+  /* Borders, guidelines, focus */
+  --ls-border-color: #2a3346;
+  --ls-secondary-border-color: #384155;
+  --ls-tertiary-border-color: rgb(148 163 184 / 0.16);
+  --ls-guideline-color: rgb(148 163 184 / 0.16);
+  --ls-focus-ring-color: rgb(56 189 248 / 0.45);
+
+  /* Blocks and properties */
+  --ls-block-properties-background-color: #161b26;
+  --ls-page-properties-background-color: #161b26;
+  --ls-block-bullet-color: #64748b;
+  --ls-block-bullet-border-color: #384155;
+  --ls-block-highlight-color: rgb(192 132 252 / 0.18);
+  --ls-a-chosen-bg: rgb(56 189 248 / 0.14);
+  --ls-menu-hover-color: var(--ls-a-chosen-bg);
+
+  /* Selection, checkbox, quote, mark, inline code */
+  --ls-selection-background-color: rgb(56 189 248 / 0.28);
+  --ls-selection-text-color: #f8fafc;
+  --ls-page-checkbox-color: #64748b;
+  --ls-page-checkbox-border-color: #384155;
+  --ls-page-blockquote-color: var(--ls-primary-text-color);
+  --ls-page-blockquote-bg-color: #161b26;
+  --ls-page-blockquote-border-color: #c084fc;
+  --ls-page-mark-color: #0d1117;
+  --ls-page-mark-bg-color: #fbbf24;
+  --ls-page-inline-code-color: #7dd3fc;
+  --ls-page-inline-code-bg-color: #11151f;
+
+  /* Scrollbars and notifications */
+  --ls-scrollbar-foreground-color: rgb(148 163 184 / 0.3);
+  --ls-scrollbar-background-color: rgb(13 17 23 / 0.4);
+  --ls-scrollbar-thumb-hover-color: rgb(148 163 184 / 0.5);
+  --ls-notification-background: #1e2536;
+  --ls-notification-text-color: #f8fafc;
+
+  /* shui/Tailwind HSL tokens — space-separated channels, not hsl() */
+  --background: 222 32% 8%;
+  --foreground: 213 27% 84%;
+  --card: 220 28% 11%;
+  --card-foreground: 213 27% 84%;
+  --popover: 222 32% 7%;
+  --popover-foreground: 213 27% 84%;
+  --primary: 199 89% 48%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 217 25% 18%;
+  --secondary-foreground: 213 27% 84%;
+  --muted: 217 25% 15%;
+  --border: 217 25% 20%;
+  --input: 217 25% 20%;
+  --ring: 199 89% 48%;
+  --accent: 271 81% 74%;
+  --accent-foreground: 222 32% 8%;
+
+  /* --lx-* neutral + accent scales */
+  --lx-gray-01: #0d1117;
+  --lx-gray-02: #11151f;
+  --lx-gray-03: #161b26;
+  --lx-gray-04: #1e2536;
+  --lx-gray-05: #2a3346;
+  --lx-gray-06: #384155;
+  --lx-gray-07: #64748b;
+  --lx-gray-08: #94a3b8;
+  --lx-gray-09: #cbd5e1;
+  --lx-gray-10: #dbeafe;
+  --lx-gray-11: #e2e8f0;
+  --lx-gray-12: #f8fafc;
+
+  --lx-accent-09: #38bdf8;
+  --lx-accent-10: #0ea5e9;
+  --lx-accent-11: #7dd3fc;
+  --lx-accent-12: #e0f2fe;
+}
+
+html[data-theme="dark"] body {
+  background: var(--ls-primary-background-color);
+  color: var(--ls-primary-text-color);
+}
+
+html[data-theme="dark"] ::selection {
+  background: var(--ls-selection-background-color);
+  color: var(--ls-selection-text-color);
+}
+
+/* Low-specificity polish: violet-tinted glow on focused/active reference cards,
+   echoing the "network of glowing nodes" motif from the wallpaper set. */
+html[data-theme="dark"] :where(.cp__right-sidebar-inner .references-blocks-item) {
+  background: color-mix(in srgb, var(--ls-secondary-background-color) 90%, #c084fc 10%);
+}

@@ -1,0 +1,25 @@
+{
+  "name": "logseq-aia-theme",
+  "version": "0.1.0",
+  "description": "Personal dark theme for Logseq, matching Aref's AIA/KDE Plasma aesthetic (charcoal-navy + cyan/violet glow accents).",
+  "license": "MIT",
+  "main": "index.html",
+  "logseq": {
+    "id": "aia-theme",
+    "main": "index.html",
+    "title": "AIA Theme",
+    "icon": "./icon.png",
+    "effect": true,
+    "themes": [
+      {
+        "name": "AIA Dark",
+        "url": "./themes/aia-dark.css",
+        "mode": "dark",
+        "description": "Charcoal-navy background, cyan/violet accents, tech-noir aesthetic"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@logseq/libs": "^0.0.17"
+  }
+}
